@@ -1,0 +1,34 @@
+---
+layout: default
+title: "Trending News"
+description: "Latest trending news and viral stories from Assam."
+---
+
+<div style="margin-bottom: 30px; border-bottom: 3px solid var(--color-accent); padding-bottom: 10px;">
+    <h1 style="font-size: 24px; font-weight: 800; text-transform: uppercase; color: var(--color-text-main);">Trending News</h1>
+</div>
+
+{% for post in site.categories["Trending"] %}
+<article class="post-item list-layout">
+    <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    
+    <div class="post-body">
+        <a href="{{ post.url | relative_url }}" class="post-image-link">
+            <img src="{{ post.image | relative_url }}" class="featured-img" alt="{{ post.title }}" loading="lazy">
+        </a>
+        <div class="post-content">
+            <p class="post-excerpt">{{ post.content | strip_html | truncatewords: 30 }}</p>
+        </div>
+    </div>
+    
+    <a href="{{ post.url | relative_url }}" class="read-more">Read more &raquo;</a>
+
+    <div class="post-footer-meta">
+        <span class="folder-icon">📁</span> Category: <span style="font-weight:600; color:var(--color-accent);">{{ post.category }}</span> 
+        <span class="separator">|</span> 
+        <span>Published On {{ post.date | date: "%B %d, %Y" }}</span>
+    </div>
+</article>
+{% else %}
+<p style="font-size: 16px; color: #666;">No trending posts published yet. Check back soon!</p>
+{% endfor %}
