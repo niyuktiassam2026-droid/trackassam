@@ -1,0 +1,48 @@
+---
+layout: default
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  },
+  "headline": "{{ page.title | escape }}",
+  "image": [
+    "{{ site.url }}{{ page.image }}"
+  ],
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Organization",
+    "name": "TrackAssam Editorial Team",
+    "url": "{{ site.url }}/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TrackAssam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/images/logo.png"
+    }
+  }
+}
+</script>
+
+<article class="single-post-view">
+    <h1 class="post-title" style="font-size: 23px; line-height: 1.3; margin-bottom: 16px;">{{ page.title }}</h1>
+    
+    <div class="post-footer-meta" style="border-top: none; padding-top: 0; margin-bottom: 24px;">
+        Category: <span style="font-weight:600; color:var(--color-accent);">{{ page.category }}</span> 
+        <span class="separator">|</span> 
+        <span class="last-updated">Posted On {{ page.date | date: "%B %d, %Y" }}</span>
+    </div>
+    
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="featured-img" style="border-radius: 6px; margin-bottom: 30px;">
+    
+    <div class="post-content">
+        {{ content }}
+    </div>
+</article>
