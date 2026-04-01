@@ -1,0 +1,32 @@
+# Site Settings
+title: "TrackAssam"
+description: "Get the latest trending news, viral stories, and exclusive tech updates from Assam."
+url: "https://sakhan5240.github.io"
+baseurl: "/trackassam"
+
+# Global Author & Socials (Helps with Google Knowledge Graph)
+author: "TrackAssam Editorial Team"
+twitter:
+  username: "trackassam" # Change or remove this if you don't have Twitter
+social:
+  name: "TrackAssam"
+  links:
+    - https://twitter.com/trackassam
+    - https://www.facebook.com/trackassam
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Pagination Settings
+paginate: 5
+paginate_path: "/page:num/"
+
+# Exclude files from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
