@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% if page.title %}{{ page.title }} | {% endif %}TrackAssam</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Get the latest trending news, viral stories, and exclusive tech updates from Assam. Fast, accurate, and premium coverage.{% endif %}">
+    
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}TrackAssam | Premium Viral News & Updates{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Get the latest trending news from Assam.{% endif %}">
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    <meta property="og:image" content="{% if page.image %}{{ site.url }}{{ page.image | relative_url }}{% else %}https://via.placeholder.com/1200x675.png?text=TrackAssam+Cover{% endif %}">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    <script src="{{ '/script.js' | relative_url }}" defer></script>
+    <meta name="robots" content="max-image-preview:large">
+</head>
+<body>
+
+    <div class="reading-progress-container">
+        <div class="reading-progress-bar" id="progress-bar"></div>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="{{ '/' | relative_url }}">Track<span>Assam</span></a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+                    <li><a href="{{ '/trending' | relative_url }}" {% if page.url contains 'trending' %}class="active"{% endif %}>Trending</a></li>
+                    <li><a href="{{ '/assam' | relative_url }}" {% if page.url contains 'assam' %}class="active"{% endif %}>Assam News</a></li>
+                    <li><a href="{{ '/tech' | relative_url }}" {% if page.url contains 'tech' %}class="active"{% endif %}>Tech</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container ad-slot top-ad">
+        <div class="ad-placeholder">Advertisement Space (Responsive)</div>
+    </div>
+
+    <div class="container layout-wrapper">
+
+        <main class="main-content">
+            {{ content }}
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget trending-widget">
+                <h3 class="widget-title">Trending Now</h3>
+                <ul class="trending-list">
+                    {% for post in site.posts limit:3 %}
+                    <li>
+                        <span class="rank">0{{ forloop.index }}</span>
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="widget ad-widget">
+                <div class="ad-placeholder sidebar-ad">Ad Space (300x250)</div>
+            </div>
+            
+            <div class="widget newsletter-widget">
+                <h3 class="widget-title">Stay Updated</h3>
+                <p>Get the most viral stories delivered straight to your inbox.</p>
+                <form action="https://api.web3forms.com/submit" method="POST" class="newsletter-form">
+                    <input type="hidden" name="access_key" value="f770098b-f7a7-4165-ac83-3ae442409d93">
+                    <input type="hidden" name="subject" value="New Newsletter Subscription (TrackAssam)">
+                    <input type="hidden" name="redirect" value="https://sakhan5240.github.io/trackassam/">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <div class="logo footer-logo">Track<span>Assam</span></div>
+                <p>Delivering high-quality, verified news and viral trends from Assam to the world. We focus on speed, accuracy, and premium reading experiences.</p>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4>Quick Links</h4>
+                <a href="{{ '/trending' | relative_url }}">Trending News</a>
+                <a href="{{ '/assam' | relative_url }}">Assam Updates</a>
+                <a href="{{ '/tech' | relative_url }}">Tech World</a>
+                <a href="{{ '/advertise' | relative_url }}">Advertise with Us</a>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4>Legal</h4>
+                <a href="{{ '/about.html' | relative_url }}">About Us</a>
+                <a href="{{ '/contact.html' | relative_url }}">Contact Support</a>
+                <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
+                <a href="{{ '/disclaimer.html' | relative_url }}">Disclaimer</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom container">
+            <p>&copy; <span id="current-year"></span> TrackAssam. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
