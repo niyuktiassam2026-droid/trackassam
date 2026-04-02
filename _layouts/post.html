@@ -42,7 +42,12 @@ layout: default
     
     <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="featured-img" style="border-radius: 6px; margin-bottom: 30px;">
     
-    <div class="post-content">
-        {{ content }}
+<div class="author-box">
+        <img src="{{ '/images/author.jpg' | relative_url }}" alt="{{ site.author }}" class="author-avatar" onerror="this.src='https://via.placeholder.com/80x80.png?text=Admin'">
+        <div class="author-info">
+            <h4>Written by {{ site.author | default: 'TrackAssam Admin' }}</h4>
+            <p>Bringing you the most accurate, verified, and trending updates from Assam. We focus on speed, accuracy, and a premium reading experience.</p>
+            <a href="{{ '/about.html' | relative_url }}" class="author-link">Read more about the author &raquo;</a>
+        </div>
     </div>
 </article>
