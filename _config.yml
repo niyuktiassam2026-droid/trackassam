@@ -1,18 +1,18 @@
 # Site Settings
-title: "TrackAssam"
+title: "TrackAs"
 description: "Get the latest trending news, viral stories, and exclusive tech updates from Assam."
 url: "https://sakhan5240.github.io"
-baseurl: "/trackassam"
+baseurl: "/trackas"
 
 # Global Author & Socials (Helps with Google Knowledge Graph)
-author: "TrackAssam Editorial Team"
+author: "TrackAs Editorial Team"
 twitter:
-  username: "trackassam" # Change or remove this if you don't have Twitter
+  username: "trackas" # Change or remove this if you don't have Twitter
 social:
-  name: "TrackAssam"
+  name: "TrackAs"
   links:
-    - https://twitter.com/trackassam
-    - https://www.facebook.com/trackassam
+    - https://twitter.com/trackas
+    - https://www.facebook.com/trackas
 
 # Plugins
 plugins:
