@@ -10,7 +10,7 @@
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}TrackAssam | Premium Viral News & Updates{% endif %}">
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Get the latest trending news from Assam.{% endif %}">
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-    <meta property="og:image" content="{% if page.image %}{{ site.url }}{{ page.image | relative_url }}{% else %}https://via.placeholder.com/1200x675.png?text=TrackAssam+Cover{% endif %}">
+    <meta property="og:image" content="{% if page.image %}{{ site.url }}{{ page.image | relative_url }}{% else %}{{ site.url }}{{ '/images/default-cover.jpg' | relative_url }}{% endif %}">
     <meta name="twitter:card" content="summary_large_image">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
