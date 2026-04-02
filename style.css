@@ -217,3 +217,26 @@ a { text-decoration: none; color: inherit; transition: color 0.2s ease; }
     
     .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* --- Author Box (E-E-A-T) --- */
+.author-box {
+    margin-top: 50px;
+    padding: 24px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.author-avatar {
+    width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-accent);
+}
+.author-info h4 { margin: 0 0 8px 0; font-size: 18px; color: var(--color-text-main); font-weight: 700; }
+.author-info p { margin: 0 0 10px 0; font-size: 15px !important; color: var(--color-text-muted) !important; line-height: 1.5 !important; }
+.author-link { font-size: 14px; color: var(--color-accent); font-weight: 600; }
+.author-link:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    .author-box { flex-direction: column; text-align: center; }
+}
