@@ -31,6 +31,14 @@ layout: default
 }
 </script>
 
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-category">{{ page.category }}</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">{{ page.title | truncatewords: 5 }}</span>
+    </nav>
+
 <article class="single-post-view">
     <h1 class="post-title" style="font-size: 23px; line-height: 1.3; margin-bottom: 16px;">{{ page.title }}</h1>
     
