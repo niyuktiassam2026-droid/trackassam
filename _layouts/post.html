@@ -31,6 +31,27 @@ layout: default
 }
 </script>
 
+{% if page.faqs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in page.faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.answer | escape | strip_html }}"
+      }
+    }{% if forloop.last == false %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
 <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="{{ '/' | relative_url }}">Home</a>
     <span class="breadcrumb-separator">›</span>
